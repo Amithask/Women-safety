@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: rgb(6, 111, 149);  
+    background: -webkit-linear-gradient(to left, #8f94fb, #565bbd);  
+    width: 100%;
+    height:100vh;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+html {
+  height: 100%;
+}
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55);
+}
+
+
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%,100% {
+    left: 100%;
+  }
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%,100% {
+    top: 100%;
+  }
+}
+
+.login-box a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%,100% {
+    right: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  width: 100vw;
+}
+.btn{
+    width: 100px;
+    height:40px;
+    background-color: #8f94fb;
+    border:3px solid lavenderblush;
+    margin-top:13px;
+    font-size:15px;
+    border-bottom-right-radius: 5px;
+    transition :0.2s ease;
+    cursor :pointer;
+  position: top;
+}
+.left, .right {
+  width: 50vw;
+  overflow: hidden;
+  display: inline-block;
+}
+.left {
+  color:pink;
+  transform: skew(0deg, -15deg);
+}
+.right {
+  color: black;
+  transform: skew(0deg, 15deg);
+}
+.left .content {
+  width: 100vw;
+  text-align: center;
+}
+.right .content {
+  width: 100vw;
+  text-align: center;
+  transform: translate(-50vw);
+}
+span {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10vw;
+  text-transform: uppercase;
+  line-height: .8;
+  transition: ease-out .6s;
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+</head>
+    
+<body>
+    <script>
+        window.addEventListener('mousemove', handleMouseMove);
+window.addEventListener('resize', handleWindowResize);
+
+const spansSlow = document.querySelectorAll('.spanSlow');
+const spansFast = document.querySelectorAll('.spanFast');
+
+let width = window.innerWidth;
+
+function handleMouseMove(e) {
+  let normalizedPosition = e.pageX / (width/2) - 1;
+  let speedSlow = 100 * normalizedPosition;
+  let speedFast = 200 * normalizedPosition;
+  spansSlow.forEach((span) => {
+    span.style.transform = `translate(${speedSlow}px)`;
+  });
+  spansFast.forEach((span) => {
+    span.style.transform = `translate(${speedFast}px)`
+  })
+}
+//we need to recalculate width when the window is resized
+function handleWindowResize() {
+  width = window.innerWidth;
+}
+    </script>
+    
+    <div class="wrap">
+        <div class="line">
+          <div class="left">
+            <div class="content">
+              <span class="spanSlow">JHANSI</span>
+            </div>
+          </div><!--
+          --><div class="right">
+            <div class="content">
+              <span class="spanSlow">JHANSI</span>
+            </div>
+          </div>
+        </div>
+        <div class="line">
+          <div class="left">
+            <div class="content">
+              <span class="spanSlow">FIGHT</span>
+            </div>
+          </div><!--
+          --><div class="right">
+            <div class="content">
+              <span class="spanSlow">FIGHT</span>
+            </div>
+          </div>
+          </div>
+          <div class="line">
+              <div class="left">
+                <div class="content">
+                  <span class="spanFast">FOR</span>
+                </div>
+              </div><!--
+              --><div class="right">
+                <div class="content">
+                  <span class="spanFast">FOR</span>
+                </div>
+              </div>
+            </div>
+            <div class="line">
+                <div class="left">
+                  <div class="content">
+                    <span class="spanSlow">YOU</span>
+                  </div>
+                </div><!--
+                --><div class="right">
+                  <div class="content">
+                    <span class="spanSlow">YOU</span>
+                  </div>
+                </div>
+                
+              </div>
+    </div>
+    
+
+
+
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+</body>
+</html>

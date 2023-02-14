@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.main{
+    width: 100%;
+    background:url(back.png);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+</style>
+</head>
+<body>
+    <script>
+        var Contact = function (name, phone) {
+    this.name = name;
+    this.phone = phone;
+}
+
+var contacts = [];
+
+
+var listContacts = function () {
+    document.getElementById('displayContacts').innerHTML = " ";
+    for (var i = 0; i < contacts.length; i++) {
+        document.getElementById('displayContacts').innerHTML += '<tr><td id="name' + i + '">' + contacts[i].name +  '</td><td id="phone' + i + '">' + contacts[i].phone + '</td><td><button class="btn btn-warning" onclick=updateContact(' + i + ')>Update</button></div><button class="btn btn-danger" onclick=deleteContact(' + i + ')>Delete</button></td></tr>';
+    }
+}
+
+var addNewContact = function () {
+    var name = document.getElementById('inputName').value;
+    var phone = document.getElementById('inputPhone').value;
+    var contact = new Contact(name,phone);
+    contacts.push(contact);
+    listContacts();
+}
+
+var deleteContact = function (i) {
+    contacts.splice(i, 1);
+    listContacts();
+}
+
+var updateContact = function (i) {
+    contactId = i;
+    document.getElementById("inputName").value = contacts[i].name;
+    document.getElementById("inputPhone").value = contacts[i].phone;
+    document.getElementById("submitButtons").innerHTML = '<button id="updateButton" class="btn btn-warning" onclick=submitUpdatedContact(contactId)>Submit</button>';
+   
+}
+
+var submitUpdatedContact = function (i) {
+    contacts[i].name = document.getElementById("inputName").value;
+    contacts[i].phone = document.getElementById("inputPhone").value;
+
+    document.getElementById("inputName").value = "";
+    document.getElementById("inputPhone").value = "";
+
+    listContacts();
+}
+
+
+listContacts();
+    </script>
+<div class="main">
+    <h1 class="text-center">My Emergency contacts<h1>
+        <br />
+      <div class="form-inline">
+              Name: <input placeholder="Name..." class="form-control" id="inputName" />
+              Phone: <input placeholder="Phone Number..." class="form-control" id="inputPhone" />
+              <div id="submitButtons"><button type="button" class="btn btn-info" onclick="addNewContact()">Submit</button></div>
+          </div>
+          <h3>My Contacts</h3>
+          <table id="displayContacts" class="table"></table>
+</div>
+
+</body>
+</html>
+
